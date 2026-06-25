@@ -1,0 +1,3 @@
+../NandController/Driver/Nand_Dri_Reset.c:10:6:Reset	16	static
+../NandController/Driver/Nand_Dri_Reset.c:19:6:EnableReset	16	static
+../NandController/Driver/Nand_Dri_Reset.c:28:6:DeviceReset	16	static

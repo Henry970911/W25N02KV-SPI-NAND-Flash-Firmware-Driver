@@ -1,0 +1,2 @@
+../NandController/Driver/Nand_Dri_Protect.c:10:6:WriteEnable	16	static
+../NandController/Driver/Nand_Dri_Protect.c:19:6:WriteDisable	16	static

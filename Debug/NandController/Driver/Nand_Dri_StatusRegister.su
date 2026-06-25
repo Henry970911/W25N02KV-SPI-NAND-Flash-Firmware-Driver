@@ -1,0 +1,2 @@
+../NandController/Driver/Nand_Dri_StatusRegister.c:10:9:ReadStatusRegister	24	static
+../NandController/Driver/Nand_Dri_StatusRegister.c:25:6:WriteStatusRegister	24	static

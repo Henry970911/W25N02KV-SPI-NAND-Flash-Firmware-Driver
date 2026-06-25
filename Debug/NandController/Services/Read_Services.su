@@ -1,0 +1,2 @@
+../NandController/Services/Read_Services.c:28:6:StandardRead_Service	32	static
+../NandController/Services/Read_Services.c:99:6:RandomRead_Service	32	static

@@ -1,0 +1,2 @@
+../NandController/Application/Test_FactoryInvalidBlockScan.c:26:6:ScanInvaliBlocks	1
+../NandController/Application/Test_FactoryInvalidBlockScan.c:69:6:ChoseValidBlock	2

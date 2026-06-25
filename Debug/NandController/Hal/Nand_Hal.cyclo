@@ -1,0 +1,4 @@
+../NandController/Hal/Nand_Hal.c:16:6:SPI_PULLUP	1
+../NandController/Hal/Nand_Hal.c:27:6:SPI_PULLDOWN	1
+../NandController/Hal/Nand_Hal.c:35:6:SPI_Transmit	1
+../NandController/Hal/Nand_Hal.c:43:6:SPI_Receive	1

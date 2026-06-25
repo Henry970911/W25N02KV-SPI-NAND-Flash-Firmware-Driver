@@ -1,0 +1,10 @@
+../NandController/Services/BBT_Services.c:34:13:read_marker_bytes_page0	32	static
+../NandController/Services/BBT_Services.c:67:13:is_factory_bad	24	static
+../NandController/Services/BBT_Services.c:98:13:write_bad_marker_page0_spare0	24	static
+../NandController/Services/BBT_Services.c:142:6:BBT_ScanFactoryBlocks	16	static
+../NandController/Services/BBT_Services.c:181:6:BBT_MarkRuntimeBad	16	static
+../NandController/Services/BBT_Services.c:210:6:BBT_IsBad	16	static
+../NandController/Services/BBT_Services.c:228:6:BBT_PrintSummary	16	static
+../NandController/Services/BBT_Services.c:253:6:BBT_ShowBadBlock	16	static
+../NandController/Services/BBT_Services.c:278:10:BBT_GetBadBlocks	24	static
+../NandController/Services/BBT_Services.c:304:5:FindFirstValidBlock	16	static
