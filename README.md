@@ -2,9 +2,7 @@
 
 ## Project Overview / 專案概述
 
-This project implements a firmware driver and validation framework for the **Winbond W25N02KV SPI NAND Flash** on an STM32 MCU platform.
-
-本專案主要目標是使用 STM32 MCU 控制 **Winbond W25N02KV SPI NAND Flash**，實作底層 NAND Flash Command Driver 與驗證流程。
+本專案實作了適用於 STM32H735G-DK 上的 Winbond W25N02KV 的分層 SPI NAND Flash 驅動程式和驗證程式。
 
 專案內容包含：
 
