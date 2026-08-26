@@ -32,7 +32,8 @@ This project implements a firmware driver and validation framework for the **Win
 | Item | Description |
 |---|---|
 | MCU Board  | STM32H735G-DK |
-| MCU Part   | STM32H735IGK6 of Arm® Cortex®-M7 |
+| MCU Part   | STM32H735IGK6 |
+| CPU Core   | Arm® Cortex®-M7 |
 | NAND Flash | Winbond W25N02KV SPI NAND Flash |
 | Flash Capacity | 2Gb / 256MB |
 | Flash Type | NAND Flash |
