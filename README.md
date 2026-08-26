@@ -10,7 +10,7 @@ This project implements a layered SPI NAND Flash driver and validation routines 
 
 - Device Reset
 - JEDEC ID Read
-- Status Register Read / WriteZ
+- Status Register Read / Write
 - Write Enable / Write Disable
 - 128KB Block Erase
 - Page Program
@@ -36,10 +36,11 @@ This project implements a layered SPI NAND Flash driver and validation routines 
 | CPU Core   | Arm® Cortex®-M7 |
 | NAND Flash | Winbond W25N02KV SPI NAND Flash |
 | Flash Capacity | 2Gb / 256MB |
-| Flash Type | NAND Flash |
-| Interface  | SPI  |
+| Flash Type | SPI NAND Flash |
+| Interface  | SPI5  |
 | Development IDE   | STM32CubeIDE |
-| Firmware Code  | C |
+| Chip Select | GPIO-controlled `/CS` |
+| Firmware Language  | C |
 
 ---
 
@@ -170,8 +171,8 @@ Endurance Test Flow
 | Enable Reset | `66h` | Enable reset sequence |
 | Reset Device | `99h` | Execute reset sequence |
 | Read JEDEC ID | `9Fh` | Read manufacturer ID and device ID |
-| Read Status Register | `0Fh / 05h` | Read NAND status registers |
-| Write Status Register | `1Fh / 01h` | Configure writable status register bits |
+| Read Status Register | `05h` | Read NAND status registers |
+| Write Status Register | `01h` | Configure writable status register bits |
 | Write Enable | `06h` | Enable program / erase / register write |
 | Write Disable | `04h` | Disable write operation |
 | Block Erase | `D8h` | Erase one 128KB block |
@@ -309,7 +310,7 @@ Factory Bad Block Scan
 
 - 掃描 NAND Flash 原廠標記的 invalid block
 - 建立 Bad Block Table
-- 後續 Program / Erase 測試時避開 bad block
+- 提供 BBT 查詢與 valid block 選擇輔助，供驗證流程使用
 - 避免將資料寫入不可靠的 physical block
 
 Bad Block Management 是 NAND Flash Firmware 中非常重要的一部分，因為 NAND Flash 的設計本來就允許出廠時存在部分 invalid block。
@@ -402,18 +403,16 @@ Select Valid Block
 │   ├── CMSIS
 │   └── STM32H7xx_HAL_Driver
 ├── NandController
+|   ├── Application
 │   ├── Driver
-│   ├── Service
-│   └── Test
+│   ├── Hal
+│   └── Services
 ├── Debug
 ├── W25N02 Firmware.ioc
 ├── STM32H735IGKX_FLASH.ld
 ├── STM32H735IGKX_RAM.ld
 └── README.md
 ```
-
-> Note: The actual folder structure may vary depending on the STM32CubeIDE project configuration.
-
 ---
 
 ## Technical Highlights / 技術重點
