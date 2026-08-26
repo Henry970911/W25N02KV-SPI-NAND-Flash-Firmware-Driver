@@ -23,7 +23,7 @@ This project implements a layered SPI NAND Flash driver and validation routines 
 - Random Load Program Test
 - Endurance Test
 
-此專案重點不是單純透過 SPI 傳輸資料，而是理解並實作 **NAND Flash 的完整操作流程、狀態檢查、錯誤判斷與資料驗證機制**。
+此專案重點不是單純透過 SPI 傳輸資料，而是理解並實作 **NAND Flash 的主要操作流程、狀態檢查、錯誤判斷與資料驗證機制**。
 
 ---
 
@@ -191,21 +191,20 @@ Endurance Test Flow
 
 ```text
 1. Reset device
-2. Read JEDEC ID
-3. Write Enable
-4. Erase target block
-5. Poll BUSY bit until device is ready
-6. Check Erase Fail bit
-7. Write Enable
-8. Load program data into page buffer
-9. Execute page program
-10. Poll BUSY bit until device is ready
-11. Check Program Fail bit
-12. Execute page data read
-13. Poll BUSY bit until device is ready
-14. Read data from internal buffer
-15. Check ECC status
-16. Compare read data with expected pattern
+2. Write Enable
+3. Erase target block
+4. Poll BUSY bit until device is ready
+5. Check Erase Fail bit
+6. Write Enable
+7. Load program data into page buffer
+8. Execute page program
+9. Poll BUSY bit until device is ready
+10. Check Program Fail bit
+11. Execute page data read
+12. Poll BUSY bit until device is ready
+13. Read data from internal buffer
+14. Check ECC status
+15. Compare read data with expected pattern
 ```
 
 此流程驗證的不只是 SPI 通訊是否成功，而是 NAND Flash 是否依照正確流程完成：
@@ -380,7 +379,7 @@ Reset Device
 ### Endurance Test
 
 ```text
-Select Valid Block
+Select Target Block
 → Erase Block
 → Program Pages
 → Read Back Pages
@@ -399,14 +398,17 @@ Select Valid Block
 ├── Core
 │   ├── Inc
 │   └── Src
+|
 ├── Drivers
 │   ├── CMSIS
 │   └── STM32H7xx_HAL_Driver
+|
 ├── NandController
 |   ├── Application
 │   ├── Driver
 │   ├── Hal
 │   └── Services
+|
 ├── Debug
 ├── W25N02 Firmware.ioc
 ├── STM32H735IGKX_FLASH.ld
