@@ -10,7 +10,7 @@ This project implements a layered SPI NAND Flash driver and validation routines 
 
 - Device Reset
 - JEDEC ID Read
-- Status Register Read / Write
+- Status Register Read / WriteZ
 - Write Enable / Write Disable
 - 128KB Block Erase
 - Page Program
@@ -71,22 +71,30 @@ SPI NAND   = NAND Flash + SPI 通訊介面
 
 ## Key Features / 專案功能
 
-- SPI NAND command driver implementation
-- Device reset sequence
-- JEDEC ID read and device identification
-- Read / write status register
-- Write Enable / Write Disable control
+### Implemented
+- Reset / JEDEC ID / Status Register access
+- Write Enable / Write Disable
 - 128KB Block Erase
-- Page Program operation
-- Page Data Read operation
-- Buffer Read operation
+- Page Program / Program Execute
+- Page Data Read / Buffer Read
+- Busy polling
+- P_FAIL / E_FAIL detection
 - ECC status parsing
-- Program Fail / Erase Fail detection
+
+### Validation / Helper
+- Single Page Program / Read Test
+- Multiple Pattern Test
+- Random Load Program Test
 - Factory Bad Block Scan
-- In-Memory Bad Block Table helper utilities
-- Pattern-based read/write verification
-- Random Load Program test
-- Endurance test framework
+- In-memory BBT helper utilities
+- Endurance test routine
+
+### Not Implemented
+- Wear leveling
+- Full FTL
+- Persistent BBT stored in NAND
+- Production-grade bad block allocator
+- Verified Dual / Quad SPI data path
 
 ---
 
