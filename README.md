@@ -18,7 +18,7 @@ This project implements a layered SPI NAND Flash driver and validation routines 
 - Buffer Read
 - ECC Status Check
 - Factory Bad Block Scan
-- Bad Block Table Management
+- In-memory Bad Block Table helper utilities
 - Pattern-based Read / Write Verification
 - Random Load Program Test
 - Endurance Test
@@ -83,7 +83,7 @@ SPI NAND   = NAND Flash + SPI 通訊介面
 - ECC status parsing
 - Program Fail / Erase Fail detection
 - Factory Bad Block Scan
-- Bad Block Table management
+- In-Memory Bad Block Table helper utilities
 - Pattern-based read/write verification
 - Random Load Program test
 - Endurance test framework
@@ -410,15 +410,30 @@ Select Valid Block
 
 ## Technical Highlights / 技術重點
 
-- Implemented SPI NAND command sequence in C
-- Controlled `/CS` timing through GPIO
-- Implemented status polling instead of relying only on fixed delay
-- Verified NAND operation result using status register flags
-- Parsed ECC status after page read
-- Designed service-layer APIs above low-level command driver
-- Implemented Factory Bad Block Scan and Bad Block Table logic
-- Built multiple validation flows for NAND Flash behavior verification
-- Used STM32 HAL SPI and GPIO APIs for external memory control
+### Implemented
+- Reset / JEDEC ID / Status Register access
+- Write Enable / Write Disable
+- 128KB Block Erase
+- Page Program / Program Execute
+- Page Data Read / Buffer Read
+- Busy polling
+- P_FAIL / E_FAIL detection
+- ECC status parsing
+
+### Validation / Helper
+- Single Page Program / Read Test
+- Multiple Pattern Test
+- Random Load Program Test
+- Factory Bad Block Scan
+- In-memory BBT helper utilities
+- Endurance test routine
+
+### Not Implemented
+- Wear leveling
+- Full FTL
+- Persistent BBT stored in NAND
+- Production-grade bad block allocator
+- Verified Dual / Quad SPI data path
 
 ---
 
