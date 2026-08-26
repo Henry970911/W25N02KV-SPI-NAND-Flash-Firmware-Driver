@@ -354,7 +354,6 @@ Read Data Compare Result
 
 ```text
 Reset Device
-→ Read JEDEC ID
 → Erase Block
 → Load Program Data
 → Program Execute
@@ -398,17 +397,17 @@ Select Target Block
 ├── Core
 │   ├── Inc
 │   └── Src
-|
+│
 ├── Drivers
 │   ├── CMSIS
 │   └── STM32H7xx_HAL_Driver
-|
+│
 ├── NandController
 |   ├── Application
 │   ├── Driver
 │   ├── Hal
 │   └── Services
-|
+│
 ├── Debug
 ├── W25N02 Firmware.ioc
 ├── STM32H735IGKX_FLASH.ld
