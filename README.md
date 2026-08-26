@@ -495,26 +495,6 @@ Through this project, I learned and practiced:
 
 ---
 
-## Project Purpose / 專案用途
-
-This project is intended for firmware learning, driver development practice, and embedded system portfolio demonstration.
-
-本專案主要作為 Firmware / Embedded System 轉職作品集，展示以下能力：
-
-```text
-Embedded C
-MCU Peripheral Control
-SPI Communication
-External Memory Driver
-NAND Flash Command Flow
-Status Register Handling
-ECC Error Handling
-Bad Block Management
-Validation Test Design
-```
-
----
-
 ## Keywords
 
 `STM32` `STM32H7` `Firmware` `Embedded C` `SPI` `SPI NAND` `NAND Flash` `W25N02KV` `Flash Driver` `ECC` `Bad Block Management` `Validation Test`
