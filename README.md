@@ -2,7 +2,9 @@
 
 ## Project Overview / 專案概述
 
-本專案實作了適用於 STM32H735G-DK 上的 Winbond W25N02KV 的分層 SPI NAND Flash 驅動程式和驗證程式。
+本專案使用 STM32H735G-DK 控制 Winbond W25N02KV SPI NAND Flash，實作底層 Command Driver、Service Layer 操作流程與驗證測試。
+
+This project implements a layered SPI NAND Flash driver and validation routines for the Winbond W25N02KV on STM32H735G-DK.
 
 專案內容包含：
 
